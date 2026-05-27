@@ -1,0 +1,409 @@
+A64HookFunction((void *)getAbsoluteAddress("libil2cpp.so", 0x33A1040), (void *) hk_set_fieldOfView, (void **) &old_set_fieldOfView);
+//public void set_fieldOfView(float value) { }   :Dump2*/ #تم تحديث
+
+//ipad ايباد
+    hexPatches.Ipad1 = MemoryPatch::createWithHex("libil2cpp.so", 0x1686950, "1F2003D5C0035FD6");
+    //public float get_fieldOfView() { }
+    hexPatches.Ipad2 = MemoryPatch::createWithHex("libil2cpp.so", 0x3351E34, "1F2003D5C0035FD6");
+    //public float get_fieldOfView() { }  :Dump2
+    hexPatches.Ipad3 = MemoryPatch::createWithHex("libil2cpp.so", 0x1685128, "C0035FD6");
+    //public float get_FieldOfView() { }
+    hexPatches.Ipad4 = MemoryPatch::createWithHex("libil2cpp.so", 0x1686958, "C0035FD6");
+    //public void set_fieldOfView(float value) { }
+    hexPatches.Ipad5 = MemoryPatch::createWithHex("libil2cpp.so", 0x3351E70, "C0035FD6");
+    //public void set_fieldOfView(float value) { }   :Dump2
+
+
+// متعدد • Multi
+
+    hexPatches.multi = MemoryPatch::createWithHex("libil2cpp.so", 0x1769410, "C0035FD6");
+    //private void SendDamageAlterOrBarrierReq(Unit attackUnit, long attackHitId, AttackCollision attack) { } لم يتم التحديث
+
+    hexPatches.multi1 = MemoryPatch::createWithHex("libil2cpp.so", 0x19184A8, "C0035FD6");
+    //private bool UpdateRecord(HaveRegardDamage.DanageData data, long attackHitId) { } لم يتم التحديث
+
+//_________________________________________________________________________________________________
+
+// سبيد شخصية • Speed Player
+
+    hexPatches.Speedplayer1 = MemoryPatch::createWithHex("libil2cpp.so", 0x19DD634, "0090221EC0035FD6");
+    //public float get_unitMoveSpeedUpRate() { } تم التحديث
+
+    hexPatches.Speedplayer2 = MemoryPatch::createWithHex("libil2cpp.so", 0x19DD634, "0090241EC0035FD6");
+    //public float get_unitMoveSpeedUpRate() { } تم التحديث
+
+    hexPatches.Speedplayer3 = MemoryPatch::createWithHex("libil2cpp.so", 0x19DD634, "0090261EC0035FD6");
+    //public float get_unitMoveSpeedUpRate() { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// إيقاف البوتات • Stop AI
+
+    hexPatches.Stop1 = MemoryPatch::createWithHex("libil2cpp.so", 0x19A17E0, "20008052C0035FD6");
+    //public bool get_IsAiStop() { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// أورا عادية • Aura Normal
+
+    hexPatches.normalaura = MemoryPatch::createWithHex("libil2cpp.so", 0x175A404, "20008052C0035FD6");
+    //public bool IsAlive() { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// أورا قوية • Aura Unlimited
+
+    hexPatches.unlimitedaura = MemoryPatch::createWithHex("libil2cpp.so", 0x175A404, "200080D2C0035FD6");
+    //public bool IsAlive() { } تم التحديث
+
+    hexPatches.unlimitedaura1 = MemoryPatch::createWithHex("libil2cpp.so", 0xFE1298, "200080D2C0035FD6");
+    //public void ResetCollision() { } تم التحديث
+
+    hexPatches.unlimitedaura2 = MemoryPatch::createWithHex("libil2cpp.so", 0x19CD3F0, "200080D2C0035FD6");
+    //public int GetNoHitId() { } تم التحديث
+
+    hexPatches.unlimitedaura3 = MemoryPatch::createWithHex("libil2cpp.so", 0x17DCBE8, "200080D2C0035FD6");
+    //public bool get_EnableHit() { } -1 تم التحديث
+
+    hexPatches.unlimitedaura4 = MemoryPatch::createWithHex("libil2cpp.so", 0x17DCBE8, "200080D2C0035FD6");
+    //public bool get_EnableHit() { } -2 تم التحديث
+
+//_________________________________________________________________________________________________
+
+// دمج إخفاء • Hide Heal
+
+    hexPatches.Hide1 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A2ECD8, "C0035FD6");
+    //public float get_HealSkillHp() { } تم التحديث
+
+    hexPatches.Hide2 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A8B380, "C0035FD6");
+    //public void OnTeamSkillHeal(Unit unit, int healValue, int hp, int uniqueId) { } تم التحديث
+
+    hexPatches.Hide3 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A8B750, "C0035FD6");
+    //private void initHealEffect() { } تم التحديث
+
+    hexPatches.Hide4 = MemoryPatch::createWithHex("libil2cpp.so", 0x1B44C50, "406B8512006DAA720000271EC0035FD6");
+    //public float get_fps() { } تم التحديث
+
+    hexPatches.Hide5 = MemoryPatch::createWithHex("libil2cpp.so", 0x1700110, "C0035FD6");
+    //private void HitAction(PacketDefine.PacketDamageResponse packet, AttackHitBase attack_hit_data, ActionEtcDef.ActionID damage_action_id) { } تم التحديث
+
+    hexPatches.Hide6 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A44124, "C0035FD6");
+    //private void SpecialAction(PacketDefine.PacketDamageResponse packet, AttackHitBase attack_hit_data, Unit attack_unit, AttackHitEtcDef.SpecialAction special_action, float blownback_speed) { } تم التحديث
+
+    hexPatches.Hide7 = MemoryPatch::createWithHex("libil2cpp.so", 0x16F81C8, "C0035FD6");
+    //private void DamageEffect(PacketDefine.PacketDamageResponse packet, ref EffectEntity hit_effect, ref EffectEntity hit_text) { } تم التحديث
+
+    hexPatches.Hide8 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A40A7C, "C0035FD6");
+    //public static bool IsHealAttack(AttackHitEtcDef.DamageType damageType) { } تم التحديث
+
+    hexPatches.Hide9 = MemoryPatch::createWithHex("libil2cpp.so", 0x1920540, "C0035FD6");
+    //public void OnApplyHeal(int heal, int isHitStop = 0, float affectHealSuccessVal = -1) { } تم التحديث
+
+    hexPatches.Hide10 = MemoryPatch::createWithHex("libil2cpp.so", 0x1920984, "C0035FD6");
+    //public void OnApplyHealDefenseShield(int heal, int isHitStop = 0) { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// حماية ١ • Bypass V1
+
+hexPatches.By1 = MemoryPatch::createWithHex("libil2cpp.so", 0x11B318C, "C0035FD6"); // public SpActplayCheatDisconnectResponse get_response() { } #تم التحديث
+
+hexPatches.By2 = MemoryPatch::createWithHex("libil2cpp.so", 0x18579F0, "C0035FD6"); // private void SetErrorDialog(BattleWindowManger.DIALOG_TYPE dialog_type) { } #تم التحديث
+
+hexPatches.By3 = MemoryPatch::createWithHex("libil2cpp.so", 0x1857424, "C0035FD6"); // public bool get_IsErrorDialog() { } #تم التحديث
+
+hexPatches.By4 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A34FFC, "C0035FD6"); // public void AddSpecialDamageEffectAndSound(MotionEtcDef.ID motionId, string specialDamageEffectName, string specialDamageSoundName) { } #تم التحديث
+
+hexPatches.By5 = MemoryPatch::createWithHex("libil2cpp.so", 0x1283E04, "C0035FD6"); // public int get_TimeoutTime() { } #تم التحديث
+
+hexPatches.By6 = MemoryPatch::createWithHex("libil2cpp.so", 0x1883B8C, "000080D2C0035FD6"); // public int[] get_pingIndexes() { } #تم التحديث
+
+hexPatches.By7 = MemoryPatch::createWithHex("libil2cpp.so", 0x1883B9C, "000080D2C0035FD6"); // public long get_pingRegionMask() { } #تم التحديث
+
+hexPatches.By8 = MemoryPatch::createWithHex("libil2cpp.so", 0x185C25C, "000080D2C0035FD6"); // public float GetPingAverage() { } #تم التحديث
+
+hexPatches.By9 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A47DCC, "C0035FD6"); // private float SetDamageRot(Vector3 attackerPos, Vector3 attackCollisionPos, float attackRotY, long attackHitId, int attack_unit_id) { } #تم التحديث
+
+hexPatches.By10 = MemoryPatch::createWithHex("libil2cpp.so", 0x19DCDF8, "C0035FD6"); // public bool get_isActiveEffectObject() { } #تم التحديث
+
+hexPatches.By11 = MemoryPatch::createWithHex("libil2cpp.so", 0x19AFB28, "C0035FD6"); // public bool get_isIgnoreCoolTime() { } #تم التحديث
+
+hexPatches.By12 = MemoryPatch::createWithHex("libil2cpp.so", 0x19AFB28, "C0035FD6"); // public bool get_isIgnoreCoolTime() { } #تم التحديث
+
+hexPatches.By13 = MemoryPatch::createWithHex("libil2cpp.so", 0x34FA668, "C0035FD6"); // private static void DisconnectedCallback(int playerId) { } #تم التحديث
+
+hexPatches.By14 = MemoryPatch::createWithHex("libil2cpp.so", 0x3321184, "C0035FD6"); // public static void FlushDisconnectedDevices() { } #تم التحديث
+
+hexPatches.By15 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A2131C, "C0035FD6"); // private void GetFPS() { } #تم التحديث
+
+hexPatches.By16 = MemoryPatch::createWithHex("libil2cpp.so", 0x1B44C50, "C0035FD6"); // public static AppContext.FPS_SETTING get_fpsSetting() { } #تم التحديث
+
+hexPatches.By17 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A75858, "C0035FD6"); // public void CreateEffectForOwner(string name, string nodeName, bool isPlayEndEffectForOwnerWhenHPLess0, bool isDestroyByHp0, List<string> motionIdList) { } #تم التحديث
+
+hexPatches.By18 = MemoryPatch::createWithHex("libil2cpp.so", 0x170A5E0, "C0035FD6"); // public void PlayEffect(EffectEntity eff, CharacterMotionEffet.EndType end, int uniqueId = 0, bool addStay = False) { } #تم التحديث
+
+hexPatches.By19 = MemoryPatch::createWithHex("libil2cpp.so", 0x11B3194, "1F2003D5C0035FD6"); // private void set_response(SpActplayCheatDisconnectResponse value) { } #تم التحديث
+
+hexPatches.By20 = MemoryPatch::createWithHex("libil2cpp.so", 0xFE8170, "1F2003D5C0035FD6"); // public static SpActplayCheatDisconnectRequest Create() { } #تم التحديث
+
+hexPatches.By21 = MemoryPatch::createWithHex("libil2cpp.so", 0x11B3194, "1F2003D5C0035FD6"); // private void set_response(SpActplayCheatResponse value) { } #تم التحديث
+
+hexPatches.By22 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A9424C, "1F2003D5C0035FD6"); // public Toggle get_isCheatRunning() { } #تم التحديث
+
+hexPatches.By23 = MemoryPatch::createWithHex("libil2cpp.so", 0x198C5CC, "1F2003D5C0035FD6"); // public void OpenCheatDisconnectDialog() { } #تم التحديث
+
+hexPatches.By24 = MemoryPatch::createWithHex("libil2cpp.so", 0x11B318C, "1F2003D5C0035FD6"); // public SpActplayCheatResponse get_response() { } #تم التحديث
+
+hexPatches.By25 = MemoryPatch::createWithHex("libil2cpp.so", 0xFE8170, "1F2003D5C0035FD6"); // public static SpActplayCheatRequest Create() { } #تم التحديث
+
+hexPatches.By26 = MemoryPatch::createWithHex("libil2cpp.so", 0x17F1A2C, "1F2003D5C0035FD6"); // public void RecvDamege(PacketDefine.PacketDamageResponse packet) { } #تم التحديث
+
+hexPatches.By27 = MemoryPatch::createWithHex("libil2cpp.so", 0x188A900, "1F2003D5C0035FD6"); // public void set_contributionCheatDisconnectStatus(bool value) { } #تم التحديث
+
+hexPatches.By28 = MemoryPatch::createWithHex("libil2cpp.so", 0x17F13A0, "1F2003D5C0035FD6"); // private void SendDamageHit(Unit attackUnit, long attackHitId, AttackCollision attack, CollisionBase mine) { } #تم التحديث
+
+hexPatches.By29 = MemoryPatch::createWithHex("libil2cpp.so", 0x188A8F8, "1F2003D5C0035FD6"); // public bool get_contributionCheatDisconnectStatus() { } #تم التحديث
+
+//_________________________________________________________________________________________________
+
+// حماية ٢ • Bypass V2
+
+hexPatches.By30 = MemoryPatch::createWithHex("libil2cpp.so", 0x188B0F0, "000080D2C0035FD6"); // public void DisconnectByCheat(Unit _unit, out int result) { } #تم التحديث
+
+hexPatches.By31 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A34FFC, "000080D2C0035FD6"); // public void AddSpecialDamageEffectAndSound(MotionEtcDef.ID motionId, string specialDamageEffectName, string specialDamageSoundName) { } #تم التحديث
+
+hexPatches.By32 = MemoryPatch::createWithHex("libil2cpp.so", 0x188A8EC, "000080D2C0035FD6"); // public void set_contributionCheatLogStatus(bool value) { } #تم التحديث
+
+hexPatches.By33 = MemoryPatch::createWithHex("libil2cpp.so", 0x188A8F8, "000080D2C0035FD6"); // public bool get_contributionCheatDisconnectStatus() { } #تم التحديث
+
+hexPatches.By34 = MemoryPatch::createWithHex("libil2cpp.so", 0x18579F0, "000080D2C0035FD6"); // private void SetErrorDialog(BattleWindowManger.DIALOG_TYPE dialog_type) { } #تم التحديث
+
+hexPatches.By35 = MemoryPatch::createWithHex("libil2cpp.so", 0x11B3194, "000080D2C0035FD6"); // private void set_response(SpActplayCheatResponse value) { } #تم التحديث
+
+hexPatches.By36 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A9424C, "000080D2C0035FD6"); // public Toggle get_isCheatRunning() { } #تم التحديث
+
+hexPatches.By37 = MemoryPatch::createWithHex("libil2cpp.so", 0x198C5CC, "000080D2C0035FD6"); // public void OpenCheatDisconnectDialog() { } #تم التحديث
+
+hexPatches.By38 = MemoryPatch::createWithHex("libil2cpp.so", 0x11B3194, "000080D2C0035FD6"); // private void set_response(SpActplayCheatDisconnectResponse value) { } #تم التحديث
+
+hexPatches.By39 = MemoryPatch::createWithHex("libil2cpp.so", 0x11B318C, "000080D2C0035FD6"); // public SpActplayCheatDisconnectResponse get_response() { } #تم التحديث
+
+hexPatches.By40 = MemoryPatch::createWithHex("libil2cpp.so", 0xFE8170, "000080D2C0035FD6"); // public static SpActplayCheatRequest Create() { } #تم التحديث
+
+hexPatches.By41 = MemoryPatch::createWithHex("libil2cpp.so", 0x188A8E4, "000080D2C0035FD6"); // public bool get_contributionCheatLogStatus() { } #تم التحديث
+
+hexPatches.By42 = MemoryPatch::createWithHex("libil2cpp.so", 0xFE8170, "000080D2C0035FD6"); // public static SpActplayCheatDisconnectRequest Create() { } #تم التحديث
+
+hexPatches.By43 = MemoryPatch::createWithHex("libil2cpp.so", 0x188A8EC, "000080D2C0035FD6"); // public void set_contributionCheatLogStatus(bool value) { } #تم التحديث
+
+hexPatches.By44 = MemoryPatch::createWithHex("libil2cpp.so", 0x188A8F8, "000080D2C0035FD6"); // public bool get_contributionCheatDisconnectStatus() { } #تم التحديث
+
+hexPatches.By45 = MemoryPatch::createWithHex("libil2cpp.so", 0x1E84D94, "000080D2C0035FD6"); // public bool WatchReport(long timestamp, bool displayMessageOnLimitHit = True) { } #تم التحديث
+
+hexPatches.By46 = MemoryPatch::createWithHex("libil2cpp.so", 0x1E84D94, "000080D2C0035FD6"); // public bool WatchReport(BacktraceReport report, bool displayMessageOnLimitHit = True) { } #تم التحديث
+
+hexPatches.By47 = MemoryPatch::createWithHex("libil2cpp.so", 0x1E03EF0, "000080D2C0035FD6"); // internal bool ShouldDisplayMessage() { } #لم يتم التحديث
+
+hexPatches.By48 = MemoryPatch::createWithHex("libil2cpp.so", 0x1E8FBE0, "000080D2C0035FD6"); // private void DisplayReportLimitHitMessage() { } #تم التحديث
+
+hexPatches.By49 = MemoryPatch::createWithHex("libil2cpp.so", 0x32D176C, "000080D2C0035FD6"); // private static void RequestFailed(uint nativeHandle, SgHttp2.SgHttp2Result result, long responseCode, string errorMessage, long progressSize, long totalProgressSize) { } #تم التحديث
+
+hexPatches.By50 = MemoryPatch::createWithHex("libil2cpp.so", 0x32D1978, "000080D2C0035FD6"); // private static void ConnectionTimeoutOccurs(UniHttp2.Error error, string errorMessage, int groupId) { } #تم التحديث
+
+hexPatches.By51 = MemoryPatch::createWithHex("libil2cpp.so", 0x3278B00, "000080D2C0035FD6"); // public static string GetErrorMessage(int groupId = 0) { } #تم التحديث
+
+hexPatches.By52 = MemoryPatch::createWithHex("libil2cpp.so", 0x1DF7F28, "000080D2C0035FD6"); // internal void HandleUnhandledExceptionsFromAndroidBackgroundThread(string backgroundExceptionMessage) { } #لم يتم التحديث
+
+hexPatches.By53 = MemoryPatch::createWithHex("libil2cpp.so", 0x1DF8BC4, "000080D2C0035FD6"); // internal void HandleUnityMessage(string message, string stackTrace, LogType type) { } #لم يتم التحديث
+
+hexPatches.By54 = MemoryPatch::createWithHex("libil2cpp.so", 0x1F422E8, "000080D2C0035FD6"); // private void HandleMessage(string condition, string stackTrace, LogType type) { } #تم التحديث
+
+hexPatches.By55 = MemoryPatch::createWithHex("libil2cpp.so", 0x1B0AA6C, "000080D2C0035FD6"); // internal static void LogMessage(LogLevel logLevel, string message) { } #تم التحديث
+
+hexPatches.By56 = MemoryPatch::createWithHex("libil2cpp.so", 0x1E758A8, "000080D2C0035FD6"); // private void Application_logMessageReceived(string condition, string stackTrace, LogType type) { } #تم التحديث
+
+hexPatches.By57 = MemoryPatch::createWithHex("libil2cpp.so", 0x1E75378, "000080D2C0035FD6"); // public void add_LogMessageReceivedEvent(Action<string> value) { } #تم التحديث
+
+hexPatches.By58 = MemoryPatch::createWithHex("libil2cpp.so", 0x3278B00, "000080D2C0035FD6"); // internal static string GetErrorMessage(int error) { } #تم التحديث
+
+hexPatches.By59 = MemoryPatch::createWithHex("libil2cpp.so", 0x3278B00, "000080D2C0035FD6"); // public static string GetErrorMessage(int groupId) { } #تم التحديث
+
+hexPatches.By60 = MemoryPatch::createWithHex("libil2cpp.so", 0x3278B00, "000080D2C0035FD6"); // internal string GetErrorMessage() { } #تم التحديث
+
+hexPatches.By61 = MemoryPatch::createWithHex("libil2cpp.so", 0x1AE9C6C, "000080D2C0035FD6"); // public string get_ErrorMessage() { } #تم التحديث
+
+hexPatches.By62 = MemoryPatch::createWithHex("libil2cpp.so", 0x1350658, "000080D2C0035FD6"); // public void AddIgnoreErrorMessage(string message) { } #تم التحديث
+
+hexPatches.By63 = MemoryPatch::createWithHex("libil2cpp.so", 0x1751A94, "000080D2C0035FD6"); // internal void <Setup>b__2(UniWebView view, int errorCode, string errorMessage) { } #تم التحديث
+
+hexPatches.By64 = MemoryPatch::createWithHex("libil2cpp.so", 0x182F6D8, "000080D2C0035FD6"); // internal void <Setup>b__4(UniWebView view, UniWebViewMessage msg) { } #تم التحديث
+
+//_________________________________________________________________________________________________
+
+// لا سقوط • No Fall
+
+    hexPatches.fall1 = MemoryPatch::createWithHex("libil2cpp.so", 0x19DC9F8, "200080D2C0035FD6");
+    //public bool disableBlownbackMotion() { } :٢ تم التحديث
+
+    hexPatches.fall2 = MemoryPatch::createWithHex("libil2cpp.so", 0x19DCA18, "200080D2C0035FD6");
+    //public bool disableDamageMotion() { } :2 تم التحديث
+
+    hexPatches.fall3 = MemoryPatch::createWithHex("libil2cpp.so", 0x19DCA38, "200080D2C0035FD6");
+    //public bool disableDownMotion() { } :٢ تم التحديث
+
+//_________________________________________________________________________________________________
+
+// غارب سكل • Garp Skill
+
+    hexPatches.garp1 = MemoryPatch::createWithHex("libil2cpp.so", 0x1893BA8, "C0035FD6");
+    //public void SetDeactivePowerGaugeSkill() { } تم التحديث
+
+    hexPatches.garp2 = MemoryPatch::createWithHex("libil2cpp.so", 0x18938BC, "C0035FD6");
+    //private void SetPowerGaugeMaxEffect() { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// زوم • Zoom
+
+    hexPatches.zoom = MemoryPatch::createWithHex("libil2cpp.so", 0x1702A98, "C0035FD6");
+    //public void SetWarpPosition(Vector3 pos, bool isLocal = False) { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// إعصار • Wind
+
+    hexPatches.Wind = MemoryPatch::createWithHex("libil2cpp.so", 0xFE648C, "C0035FD6");
+    //public void StartCondition(Unit unit, ConditionBase conditionBase, Action<ConditionInfo> startAction, Action<ConditionInfo> endAction, float startGameTime, int conditionUniqueId, int justdodgeAttackerId, int attackUnitId, bool is_always = False, UnitCondition condition, bool isNoUpdate = False) { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// لا قفز • No Jump
+
+    hexPatches.Jump = MemoryPatch::createWithHex("libil2cpp.so", 0xD8, "C0035FD6");
+    //public void JumpStart(bool is_local, Vector3 target_position) { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// علم سحب • RFC Flag Range
+
+    hexPatches.Flagrange1 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A04484, "403393D22033B3F22033DFF2000BE8F2C0035FD6");
+    //public static float GetFlagDistance(Unit unit) { } تم التحديث
+
+    hexPatches.Flagrange2 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A04484, "403393D22033B3F22033DFF2000BE8F2C0035FD6");
+    //public static float GetFlagDistance(Unit unit) { } تم التحديث
+
+    hexPatches.Flagrange3 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A04484, "403393D22033B3F22033DFF2000BE8F2C0035FD6");
+    //public static float GetFlagDistance(Unit unit) { } تم التحديث
+
+    hexPatches.Flagrange4 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A04484, "403393D22033B3F22033DFF2000BE8F2C0035FD6");
+    //public static float GetFlagDistance(Unit unit) { } تم التحديث
+
+    hexPatches.Flagrange5 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A04484, "0090221EC0035FD6");
+    //public static float GetFlagDistance(Unit unit) { } تم التحديث
+
+    hexPatches.Flagrange6 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A04484, "0010231EC0035FD6");
+    //public static float GetFlagDistance(Unit unit) { } تم التحديث
+
+    hexPatches.Flagrange7 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A04484, "0090231EC0035FD6");
+    //public static float GetFlagDistance(Unit unit) { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// سبيد لعبة • Game Speed
+
+    hexPatches.speedg1 = MemoryPatch::createWithHex("libil2cpp.so", 0x35AF514, "4066861280B9A7720000271EC0035FD6");
+    //public static float get_deltaTime() { } تم التحديث
+
+    hexPatches.speedg2 = MemoryPatch::createWithHex("libil2cpp.so", 0x35AF514, "A0CC8C1220E3A7720000271EC0035FD6");
+    //public static float get_deltaTime() { } تم التحديث
+
+    hexPatches.speedg3 = MemoryPatch::createWithHex("libil2cpp.so", 0x35AF514, "0010211EC0035FD6");
+    //public static float get_deltaTime() { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// سبيد انميشن • Animation Speed
+
+    hexPatches.Anim = MemoryPatch::createWithHex("libil2cpp.so", 0x189E18C, "A0CC8C1220E3A7720000271EC0035FD6");
+    //public ValueTuple<float, long> GetDeltaTime() { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// سكلات لانهائية • Infinite Skills
+
+    hexPatches.skill1 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A0FC08, "200080D2C0035FD6");
+    //public void SetSkillCoolTime(ActionEtcDef.ActionID nextActionId, int changeModelIndex) { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// سموث • Smooth
+
+    hexPatches.Smooth1 = MemoryPatch::createWithHex("libil2cpp.so", 0x1700110, "C0035FD6");
+    //private void HitAction(PacketDefine.PacketDamageResponse packet, AttackHitBase attack_hit_data, ActionEtcDef.ActionID damage_action_id) { } تم التحديث
+
+    hexPatches.Smooth2 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A44124, "C0035FD6");
+    //private void SpecialAction(PacketDefine.PacketDamageResponse packet, AttackHitBase attack_hit_data, Unit attack_unit, AttackHitEtcDef.SpecialAction special_action, float blownback_speed) { } تم التحديث
+
+    hexPatches.Smooth3 = MemoryPatch::createWithHex("libil2cpp.so", 0x16F81C8, "C0035FD6");
+    //private void DamageEffect(PacketDefine.PacketDamageResponse packet, ref EffectEntity hit_effect, ref EffectEntity hit_text) { } تم التحديث
+
+    hexPatches.Smooth4 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A40A7C, "C0035FD6");
+    //public static bool IsHealAttack(AttackHitEtcDef.DamageType damageType) { } تم التحديث
+
+    hexPatches.Smooth5 = MemoryPatch::createWithHex("libil2cpp.so", 0x1920984, "C0035FD6");
+    //public void OnApplyHealDefenseShield(int heal, int isHitStop = 0) { } تم التحديث
+
+    hexPatches.Smooth6 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A2ECD8, "C0035FD6");
+    //public float get_HealSkillHp() { } تم التحديث
+
+    hexPatches.Smooth7 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A8B380, "C0035FD6");
+    //public void OnTeamSkillHeal(Unit unit, int healValue, int hp, int uniqueId) { } تم التحديث
+
+    hexPatches.Smooth8 = MemoryPatch::createWithHex("libil2cpp.so", 0xFD62E0, "C0035FD6");
+    //private void System.Collections.IEnumerator.Reset() { } تم التحديث
+
+    hexPatches.Smooth9 = MemoryPatch::createWithHex("libil2cpp.so", 0x1A8B750, "C0035FD6");
+    //private void initHealEffect() { } تم التحديث
+
+//_________________________________________________________________________________________________
+
+// تيليبورت العلم • Teleport Flag
+
+
+
+
+
+
+
+//_________________________________________________________________________________________________
+
+// منظور ايباد • iPad View
+
+    hexPatches.Ipad1 = MemoryPatch::createWithHex("libil2cpp.so", 0x17DAA80, "1F2003D5C0035FD6");
+    //public float get_fieldOfView() { } تم التحديث
+
+    hexPatches.Ipad2 = MemoryPatch::createWithHex("libil2cpp.so", 0x17DAA80, "1F2003D5C0035FD6");
+    //public float get_fieldOfView() { }  :Dump2 تم التحديث
+
+    hexPatches.Ipad3 = MemoryPatch::createWithHex("libil2cpp.so", 0x17D9588, "C0035FD6");
+    //public float get_FieldOfView() { } تم التحديث
+
+    hexPatches.Ipad4 = MemoryPatch::createWithHex("libil2cpp.so", 0x17CC8A4, "C0035FD6");
+    //public void set_fieldOfView(float value) { } تم التحديث
+
+    hexPatches.Ipad5 = MemoryPatch::createWithHex("libil2cpp.so", 0x17CC8A4, "C0035FD6");
+    //public void set_fieldOfView(float value) { }   :Dump2 تم التحديث
+
+//_________________________________________________________________________________________________
+
+// تيليبورت العلم • Teleport Flag
+uintptr_t base = KittyMemory::getAbsoluteAddress("libil2cpp.so", 0);
+    TreasureBase_GetPosition=(Vector3(*)(void*))(base0x0); //تم التحديث
+    Unit_IsMyUnit=(bool(*)(void*))(base0x0); //تم التحديث
+    UnitMove_SetWarpPosition=(void(*)(void*,Vector3,bool))(base0xFCF414); //تم التحديث
+    A64HookFunction((void*)(base0x19371D0),(void*)BattleReadyOk_Hook,(void**)&old_BattleReadyOk); //لم يتم التحديث
+    A64HookFunction((void*)(base0x17F961C),(void*)TreasureBattleExecute_Hook,(void**)&old_TreasureBattleExecute); //لم يتم التحديث
+    A64HookFunction((void*)(base0x19C7EC4),(void*)UnitMoveBattleExecute_Hook,(void**)&old_UnitMoveBattleExecute); //لم يتم التحديث
+//public static float GetFlagDistance(Unit unit) { }
+
+    
